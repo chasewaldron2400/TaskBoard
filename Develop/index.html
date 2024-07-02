@@ -22,7 +22,7 @@
   </header>
 
     <!-- Todo: Create a modal with a form to add tasks -->
-     <div class="modalForm" id="formModal" aria-hidden="true" tabindex="-1">
+     <div class="modalForm" id="formModal" aria-hidden="true" aria-labelledby="formModalLabel" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -39,10 +39,7 @@
                 <label for="taskDescription" class="form-label">Task Description</label>
                 <textarea class="form-control" id="taskDescription" rows="3"></textarea>
               </div>
-              <div class="container">
-                <div class="text-center mb-5">
-                  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
-                </div>
+                  <button type="submit" class="btn btn-primary">Add Task</button>
             </form>
           </div>
         </div>
@@ -80,6 +77,9 @@
           </div>
       </div>
     </div>
+  </div>
+  <div id="task-container">
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
