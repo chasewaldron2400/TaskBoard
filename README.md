@@ -24,10 +24,13 @@ Open index.html in your web browser.
 ## Usage
 
 This is for anyone but more specifically employees or students with a busy schedule.
+![image](https://github.com/user-attachments/assets/c719f35c-4f61-4738-81a9-801df08cd3b7)
+
 
 ## Credits
 
 - https://github.com/chasewaldron2400
+- https://chasewaldron2400.github.io/TaskBoard/
 - Xpert Learning Assistant (NW Ai)
 - Bootstrap
 - JQuery
