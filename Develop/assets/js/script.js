@@ -23,11 +23,8 @@ function createTaskCard(task) {
   `;
   return card;
 }
-let taskContainer = document.getElementById('task-container');
-
 for (const task of taskList) {
     let taskCardHTML = createTaskCard(task);
-    taskContainer.innerHTML += taskCardHTML;
 }
 
 localStorage.setItem("nextId", JSON.stringify(nextId));
@@ -103,7 +100,8 @@ $('#formModal').modal('hide')
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event){
     let taskId = $(event.target).closest('.card').data('task-id');
-    taskList = taskList.filter(task => task.id !== taskId);
+    taskList = taskList.filter(task => task.id != taskId);
+    console.log(taskId)
     saveToLocalStorage();
     renderTaskList();
 }
@@ -111,9 +109,9 @@ function handleDeleteTask(event){
 // Todo: create a function to handle dropping a task into a new status lane
 function handleDrop(event, ui) {
     let taskId = ui.draggable.data('task-id');
-    let newStatus = $(this).data('status');
+    let newStatus = $(this).attr('id');
 
-    let taskIndex = taskList.findIndex(task => task.id === taskId);
+    let taskIndex = taskList.findIndex(task => task.id == taskId);
     if (taskIndex !== -1) {
         taskList[taskIndex].status = newStatus;
         saveToLocalStorage();
@@ -127,10 +125,10 @@ $(document).ready(function () {
    
     $('#taskForm').submit(handleAddTask);
 
-    $('#task-container').on('click', '.delete-task', handleDeleteTask);
+    $('#task-container').on('click', handleDeleteTask);
 
     $(`.lane`).droppable({
-        accept: 'draggable',
+        accept: '.draggable',
         drop: handleDrop
     });
 
